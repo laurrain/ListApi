@@ -1,12 +1,12 @@
 var List = require('./list')
 QUnit.test("A new list is empty", function (assert) {
-	var l = new List()
+	var l = new List.List()
   assert.equal(l.empty(), true)
   assert.equal(l.head(), null)
 });
 
 QUnit.test("It is really a list", function (assert) {
-  var l = new List()
+  var l = new List.List()
   l.add("a")
   l.add("b")
   l.add("c")
@@ -17,7 +17,7 @@ QUnit.test("It is really a list", function (assert) {
 });
 
 QUnit.test("Head of the list contains most recent addition", function (assert) {
-  var l = new List()
+  var l = new List.List()
   l.add("a")
   assert.equal(l.head(), "a", "content a")
   l.add("b")
@@ -29,7 +29,7 @@ QUnit.test("Head of the list contains most recent addition", function (assert) {
 
 
 QUnit.test("Returns the correct length of a list", function (assert) {
-  var l = new List()
+  var l = new List.List()
   assert.equal(l.length(), 0, "length is 0")
   l.add("a")
   l.add("b")
@@ -44,7 +44,7 @@ QUnit.test("Returns the correct length of a list", function (assert) {
 
 
 QUnit.test("Pop gets the most recent element off the list", function (assert) {
-  var l = new List()
+  var l = new List.List()
   l.add("a")
   l.add("b")
   l.add("c")
@@ -70,7 +70,7 @@ QUnit.test("Pop gets the most recent element off the list", function (assert) {
 
 
 QUnit.test("Returns the last element in the list", function (assert) {
-  var l = new List()
+  var l = new List.List()
   assert.equal(l.last(), null)
   l.add("a")
   l.add("b")
@@ -80,8 +80,8 @@ QUnit.test("Returns the last element in the list", function (assert) {
 });
 
 QUnit.test("Check to see if two list are equal", function (assert) {
-var l = new List()
-var m = new List()
+var l = new List.List()
+var m = new List.List()
 assert.ok(l.equals(m), "Lists are equal")
 l.add("a")
 l.add("b")
@@ -96,8 +96,8 @@ assert.ok(l.equals(m),"lists are equal")
 });
 
 QUnit.test("Reverse a list", function(assert){
-var l = new List();
-var m = new List();
+var l = new List.List();
+var m = new List.List();
 l.reverse();
 assert.ok(l.equals(m), "The list is reversed");
 l.add("a")
@@ -111,8 +111,8 @@ assert.ok(m.equals(l), "The list is reversed")
 });
 
 QUnit.test("Merge two list", function(assert){
-  var l = new List();
-  var m = new List();
+  var l = new List.List();
+  var m = new List.List();
 
   l.merge(m);
   assert.ok(l.equals(m),"The two lists are merged");

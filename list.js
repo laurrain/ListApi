@@ -1,13 +1,13 @@
 
 // An object to hold the item we will be
 // storing in our list
-export.ListItem = function(data, tail) {
+exports.ListItem = function(data, tail) {
   this.tail = tail
   this.data = data
 }
 
 // List implementation
-export.List = function() {
+exports.List = function() {
   this.item = null
 
   // Add a data item to the front of the list
