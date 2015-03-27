@@ -1,4 +1,4 @@
-
+var List = require('./list')
 QUnit.test("A new list is empty", function (assert) {
 	var l = new List()
   assert.equal(l.empty(), true)
@@ -94,6 +94,7 @@ assert.ok(l.equals(m),"lists are equal")
 m.add("d")
 assert.ok(l.equals(m),"lists are equal")
 });
+
 QUnit.test("Reverse a list", function(assert){
 var l = new List();
 var m = new List();
@@ -107,4 +108,21 @@ m.add("a")
 m.add("b")
 m.add("c")
 assert.ok(m.equals(l), "The list is reversed")
+});
+
+QUnit.test("Merge two list", function(assert){
+  var l = new List();
+  var m = new List();
+
+  l.merge(m);
+  assert.ok(l.equals(m),"The two lists are merged");
+  l.add("a");
+  l.add("b");
+  l.add("c");
+
+  m.add("a");
+  m.add("b");
+  m.add("c");
+  m.add("d");
+  assert.ok(l.merge(m), "The two lists are merged")
 });

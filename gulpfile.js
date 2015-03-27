@@ -1,14 +1,12 @@
 //
 var gulp = require('gulp'),
-    qunit = require('gulp-qunit');
-
+qunit = require('gulp-qunit');
 gulp.task('test', function() {
-    return gulp.src('./test-setup.html')
-        .pipe(qunit());
+return gulp.src('./list-tests.js')
+.pipe(qunit());
 });
-
 gulp.task('go', function(){
-
-	console.log("oi!");
+console.log("oi!");
+});
 
 });

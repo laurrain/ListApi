@@ -1,13 +1,13 @@
 
 // An object to hold the item we will be
 // storing in our list
-var ListItem = function(data, tail) {
+export.ListItem = function(data, tail) {
   this.tail = tail
   this.data = data
 }
 
 // List implementation
-var List = function() {
+export.List = function() {
   this.item = null
 
   // Add a data item to the front of the list
@@ -38,9 +38,9 @@ var List = function() {
   // list is empty, we return null
   this.pop = function() {
     // ......
-    if(this.empty())
+    if(this.empty()){
       return null
-    else{
+    }else{
       var recent_head = this.item.data;
       this.item = this.item.tail;
       return recent_head;
@@ -51,9 +51,9 @@ var List = function() {
   // Return the number of elements in the list.
   this.length = function() {
     // ......
-    if(this.empty())
+    if(this.empty()){
     return 0
-    else{
+    }else{
       var len = 0
       list = this.item
       while(list){
@@ -80,8 +80,9 @@ var List = function() {
 
       return temp.data;
     }
-  
-}
+  }
+
+  //Return the true if lists are equals; if not return false
   this.equals = function(anotherList){
     if(this.length() !== anotherList.length()){
       return false
@@ -99,10 +100,11 @@ var List = function() {
         }
           temp1 = temp1.tail
           temp2 = temp2.tail
-        }
-      return bool
       }
+      return bool
     }
+  }
+    
 
   this.reverse = function(){
     if(this.empty){
@@ -122,13 +124,31 @@ var List = function() {
           temp = this.item;
         }
           temp = temp.tail;
-        }
+      }
           while(this.last() !== reversing.head());
       this.item = reversing.head();
       return this.item
-      }
     }
   }
+  
 
+  this.merge = function(anotherList){
+    var copyList = anotherList.item
+    if(this.empty()){
+      this.item = copyList
+      return this.item
+    }
+    else{
+
+      while(copyList){
+        this.add(copyList.data);
+        copyList = copyList.tail
+        }
+        return this.item
+    }
+      
+     
+  }
+  
 }
 
