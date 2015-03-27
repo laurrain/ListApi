@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/laurrain/ListApi.svg?branch=master)](https://travis-ci.org/laurrain/ListApi)
 #List API seed
 
 Linked lists are a very basic data structure that form the cornerstone of many
