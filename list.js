@@ -84,10 +84,7 @@ exports.List = function() {
 
   //Return the true if lists are equals; if not return false
   this.equals = function(anotherList){
-    if(this.length() !== anotherList.length()){
-      return false
-    }
-    else if(this.empty() === true && anotherList.empty() === true){
+    if(this.empty() === true && anotherList.empty() === true){
       return true
     }
     else{

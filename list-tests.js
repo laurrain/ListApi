@@ -90,8 +90,6 @@ m.add("a")
 m.add("b")
 m.add("c")
 assert.ok(l.equals(m),"lists are equal")
-m.add("d")
-assert.ok(l.equals(m),"lists are equal")
 });
 
 QUnit.test("Reverse a list", function(assert){
